@@ -1,12 +1,19 @@
-/** @type {import('tailwindcss').Config} */
+import type { Config } from 'tailwindcss';
+import defaultTheme from 'tailwindcss/defaultTheme';
+
 export default {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   mode: "jit",
   theme: {
     fontFamily: {
-      
+      sans: ["informapro", ...defaultTheme.fontFamily.sans],
+      body: ["informapro", ...defaultTheme.fontFamily.sans],
+      display: ["macula-line", ...defaultTheme.fontFamily.sans],
     },
     extend: {
+      fontFamily: {
+        title: ["macula-line", ...defaultTheme.fontFamily.sans],
+      },
       colors: {
         primary: "#050816",
         secondary: "#aaa6c3",
@@ -27,5 +34,5 @@ export default {
     },
   },
   plugins: []
-}
+} satisfies Config;
 

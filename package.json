@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.18",
     "@types/jest": "^29.5.11",
     "@types/node": "^20.11.0",
     "react": "^18.2.0",
