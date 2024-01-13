@@ -1,3 +1,4 @@
+import React from 'react'
 import { Tilt } from 'react-tilt'
 import { motion } from 'framer-motion'
 import { styles } from '../styles'
@@ -48,7 +49,7 @@ const ProjectCard = ({ name, image, source_code_link, description, index, tags }
 
 const Works = () => (
   <>
-    <motion.div variants={textVariant()}>
+    <motion.div variants={textVariant(0)}>
       <p>
         <p className={`${styles.sectionSubText}`}>My work</p>
         <h2 className={`${styles.sectionHeadText}`}>Projects.</h2>

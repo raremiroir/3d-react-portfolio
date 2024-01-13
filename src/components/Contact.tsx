@@ -1,3 +1,4 @@
+import React from 'react'
 import { useState, useRef } from 'react'
 import { motion } from 'framer-motion'
 import emailjs from '@emailjs/browser'
@@ -16,12 +17,12 @@ const Contact = () => {
   });
   const [ loading, setLoading ] = useState(false);
 
-  const handleChange = (e) => {
+  const handleChange = (e: Event) => {
     const { name, value } = e.target;
     setForm({...form, [name]: value});
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e: Event) => {
     e.preventDefault();
     setLoading(true);
     
@@ -76,7 +77,7 @@ const Contact = () => {
           <label htmlFor="" className="flex flex-col">
             <span className="text-white font-medium mb-4">Your Message</span>
             <textarea 
-              rows="7" 
+              rows={7} 
               name="message"
               value={form.message}
               onChange={handleChange}

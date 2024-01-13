@@ -1,3 +1,4 @@
+import React from 'react'
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import { motion } from 'framer-motion';
 import 'react-vertical-timeline-component/style.min.css';
@@ -8,7 +9,16 @@ import { SectionWrapper } from '../hoc';
 import { textVariant } from '../utils/motion';
 
 
-const ExperienceCard = ({ experience }) => (
+const ExperienceCard = ({ experience }: {
+  experience: {
+    title: string,
+    company_name: string,
+    date: string,
+    icon: string,
+    iconBg: string,
+    points: string[]
+  }
+}) => (
   <VerticalTimelineElement
     contentStyle={{ background: '#1d1836', color: '#fff' }}
     contentArrowStyle={{ borderRight: '7px solid  #232631' }}
@@ -41,7 +51,7 @@ const ExperienceCard = ({ experience }) => (
 const Experience = () => {
   return (
     <>
-      <motion.div variants={textVariant()}>
+      <motion.div variants={textVariant(0)}>
         <p>
           <p className={`${styles.sectionSubText}`}>What I have done so far</p>
           <h2 className={`${styles.sectionHeadText}`}>Experience.</h2>
